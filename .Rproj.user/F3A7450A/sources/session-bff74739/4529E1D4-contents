@@ -1,0 +1,4 @@
+library(Blestdiscrete)
+x<-rpois(100,4)
+y<-rpois(100,5)
+EstDep(cbind(x,y))

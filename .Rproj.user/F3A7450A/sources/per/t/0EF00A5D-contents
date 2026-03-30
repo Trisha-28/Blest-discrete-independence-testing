@@ -1,0 +1,37 @@
+#'@title  Testing independence based on Blest measure between random variables
+#'
+#'@description This function computes the matrix of Blest statistics and p-value between random variables with discrete distributions.
+#'
+#'@param x           Data matrix
+#'
+#'@return \item{stat}{Blest  statistics from multilinear copula}
+#'@return \item{pvalue}{P-values for the test statistics}
+#'
+#'x <-rpois(100,3)
+#'y <-rpois(100,4)
+#'z <-cbind(x,y)
+#'out<-EstDep(z)
+#'
+
+EstDep = function(x)
+{
+  dd = dim(x)
+  n = dd[1]
+  d = 2
+  rho = matrix(0,ncol=2,nrow=2)
+  pvalrho = matrix(0,ncol=2,nrow=2)
+  rho[1,1]=1
+  rho[2,2]=1
+  out0 = stat_dep(x[,1],x[,2])
+  out1=  stat_dep(x[,2],x[,1])
+  rho[1,2] = out0$rho
+  rho[2,1] = out1$rho
+  zrhoij= sqrt(n)*rho[1,2];
+  zrhoji= sqrt(n)*rho[2,1];
+  pvalrho[1,2] = 200*pnorm(-abs(zrhoij))
+  pvalrho[2,1] = 200*pnorm(-abs(zrhoji))
+  pvalrho[1,1]=100
+  pvalrho[2,2]=100
+  out = list(rho=rho,pvalrho=pvalrho)
+  return(out)
+}

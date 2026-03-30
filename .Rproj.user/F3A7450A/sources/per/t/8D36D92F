@@ -1,0 +1,26 @@
+{
+    "id": "8D36D92F",
+    "path": "~/Blestdiscrete/man/blest.Rd",
+    "project_path": "man/blest.Rd",
+    "type": "r_doc",
+    "hash": "2400736279",
+    "contents": "",
+    "dirty": false,
+    "created": 1774876374717.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1774875824,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1774875824,
+    "read_only": true,
+    "read_only_alternatives": [
+        "R/Blest.R"
+    ]
+}
